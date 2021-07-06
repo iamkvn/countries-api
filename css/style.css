@@ -1,0 +1,24 @@
+:root {
+  --color-dark-blue: hsl(209, 23%, 22%);
+  --color-very-dark-blue: hsl(207, 26%, 17%);
+  --color-black: hsl(200, 15%, 8%);
+  --color-dark-gray: hsl(0, 0%, 52%);
+  --color-very-light-gray: hsl(0, 0%, 98%);
+  --color-white: hsl(0, 0%, 100%); }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.6rem;
+  line-height: 3rem;
+  background-color: var(--color-very-light-gray); }
