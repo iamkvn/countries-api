@@ -4,16 +4,33 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
+    <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
       rel="stylesheet"
     />
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- javascript -->
+    <script type="text/javascript" src="script.js" defer></script>
     <title>Countries API</title>
   </head>
   <body>
-    <h1>HELLO WORLD</h1>
+    <header class="header">
+      <h1 class="heading-1">Where in the world?</h1>
+      <label class="toggle-switch">
+        <input class="toggle-switch__checkbox" type="checkbox" />
+        <span class="toggle-switch__slider"></span>
+      </label>
+    </header>
+    <form class="search">
+      <input
+        type="text"
+        class="search__field"
+        placeholder="Search for a country..."
+      />
+    </form>
   </body>
 </html>
