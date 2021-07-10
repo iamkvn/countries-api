@@ -8,6 +8,8 @@
   --color-dark-gray: hsl(0, 0%, 52%); //light mode input
   --color-very-light-gray: hsl(0, 0%, 98%); //light mode background
   --color-white: hsl(0, 0%, 100%); //dark mode text & light mode elements
+  --shadow: rgb(228, 227, 227);
+  --margin-x: 1.5rem;
 }
 
 //------------------  BASE  --------------------//
@@ -31,6 +33,15 @@ body {
   font-size: 1.6rem;
   //font-weight: 300, 600, 800;
   background-color: var(--color-very-light-gray);
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 //  typography
@@ -88,6 +99,82 @@ body {
   }
 }
 
+// search input
+
+.search {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  padding: 1.5rem 2.5rem;
+  width: 343px;
+  height: 4.8rem;
+  background: var(--color-white);
+  border-radius: 0.5rem;
+  box-shadow: 1px 5px 20px var(--shadow);
+
+  &__icon {
+    margin-right: 2rem;
+    color: hsl(0, 1%, 77%);
+  }
+  &__field {
+    border: none;
+
+    &::placeholder {
+      color: hsl(0, 1%, 77%);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+// drop down menu
+
+.filter {
+  display: inline-block;
+  cursor: pointer;
+
+  &__btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20rem;
+    height: 4.8rem;
+    padding: 0 2rem;
+    background: var(--color-white);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.3rem;
+    box-shadow: 1px 5px 20px var(--shadow);
+    cursor: pointer;
+  }
+
+  &__icon {
+    font-size: 1rem;
+  }
+
+  &__list {
+    padding: 1.5rem 2rem;
+    background: var(--color-white);
+    margin-top: 0.5rem;
+    height: 144px;
+    width: 20rem;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 0.5rem;
+    box-shadow: 1px 5px 20px var(--shadow);
+    position: relative;
+    position: absolute;
+    z-index: 1;
+  }
+
+  &__item:hover {
+    background: var(--color-very-light-gray);
+  }
+}
+
 //------------------  LAYOUT  --------------------//
 
 .header {
@@ -103,4 +190,15 @@ body {
 
 .dark-mode {
   color: red;
+}
+
+//------------------  UTILITIES  --------------------//
+
+.u-hidden {
+  display: none !important;
+}
+
+.u-margin-x {
+  margin-left: var(--margin-x) !important;
+  margin-right: var(--margin-x) !important;
 }

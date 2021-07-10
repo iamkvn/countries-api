@@ -1,11 +1,14 @@
 'use strict';
+
+// ELEMENTS
 const log = console.log;
-// const slider = document.querySelector('.toggle-switch__slider');
-// const heading1 = document.querySelector('.heading-1');
+const filterBtn = document.querySelector('.js-filter__btn');
+const filterList = document.querySelector('.js-filter__list');
 
-// const changeMode = () => {
-//   heading1.classList.toggle('dark-mode');
-//   log('hi');
-// };
+//FUNCTIONS
 
-// slider.addEventListener('click', changeMode);
+const displayMenu = () => {
+  filterList.classList.toggle('u-hidden');
+};
+
+filterBtn.addEventListener('click', displayMenu);

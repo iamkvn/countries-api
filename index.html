@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/c7e2b5afe6.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,12 +30,26 @@
         <span class="toggle-switch__slider"></span>
       </label>
     </header>
-    <form class="search">
+    <form class="search u-margin-x">
+      <i class="fas fa-search search__icon"></i>
       <input
         type="text"
         class="search__field"
         placeholder="Search for a country..."
       />
     </form>
+    <div class="filter u-margin-x">
+      <button class="filter__btn js-filter__btn">
+        Filter by Region
+        <i class="fas fa-chevron-down filter__icon"></i>
+      </button>
+      <ul class="filter__list js-filter__list u-hidden">
+        <li class="filter__item">Africa</li>
+        <li class="filter__item">American</li>
+        <li class="filter__item">Asia</li>
+        <li class="filter__item">Europe</li>
+        <li class="filter__item">Oceania</li>
+      </ul>
+    </div>
   </body>
 </html>
