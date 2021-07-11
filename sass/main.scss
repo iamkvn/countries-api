@@ -1,6 +1,12 @@
 //----------------  HELPERS  --------------------//
 
 // variables
+
+//RESPONSIVE BREAKPOINTS
+
+$bp-md: 48em; //768px
+$bp-lg: 64em; //1024px
+
 :root {
   --color-dark-blue: hsl(209, 23%, 22%); //dark mode elements
   --color-very-dark-blue: hsl(207, 26%, 17%); //dark mode background
@@ -10,6 +16,12 @@
   --color-white: hsl(0, 0%, 100%); //dark mode text & light mode elements
   --shadow: rgb(228, 227, 227);
   --margin-x: 1.5rem;
+}
+
+@media only screen and (min-width: $bp-lg) {
+  :root {
+    --margin-x: 6rem;
+  }
 }
 
 //------------------  BASE  --------------------//
@@ -26,6 +38,10 @@
 html {
   font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
   box-sizing: border-box;
+
+  @media only screen and (min-width: $bp-md) {
+    font-size: 70%;
+  }
 }
 
 body {
@@ -48,6 +64,10 @@ a {
 
 .heading-1 {
   font-size: 1.5rem;
+
+  @media only screen and (min-width: $bp-md) {
+    font-size: 2rem;
+  }
 }
 
 //------------------  COMPONENTS  --------------------//
@@ -57,8 +77,8 @@ a {
 .toggle-switch {
   position: relative;
   display: inline-block;
-  width: 54px;
-  height: 28px;
+  width: 5.2rem; //54
+  height: 2.5rem; //28
 
   &__checkbox {
     opacity: 0;
@@ -74,16 +94,16 @@ a {
     right: 0;
     bottom: 0;
     background-color: rgb(228, 226, 226);
-    border-radius: 34px;
+    border-radius: 3.4rem;
     transition: 0.4s;
 
     &::before {
       position: absolute;
       content: '';
-      height: 20px;
-      width: 20px;
-      left: 4px;
-      bottom: 4px;
+      height: 1.7rem; //20px
+      width: 1.7rem;
+      left: 0.4rem;
+      bottom: 0.4rem;
       background-color: white;
       border-radius: 50%;
       transition: 0.4s;
@@ -95,21 +115,26 @@ a {
   }
 
   &__checkbox:checked + &__slider:before {
-    transform: translateX(26px);
+    transform: translateX(2.6rem);
   }
 }
 
 // search input
 
 .search {
-  margin-top: 2rem;
   margin-bottom: 3rem;
   padding: 1.5rem 2.5rem;
-  width: 343px;
+  min-width: 34.3rem;
+  max-width: 48rem;
   height: 4.8rem;
   background: var(--color-white);
   border-radius: 0.5rem;
   box-shadow: 1px 5px 20px var(--shadow);
+  display: inline-flex;
+
+  @media only screen and (min-width: $bp-md) {
+    margin-bottom: 4rem;
+  }
 
   &__icon {
     margin-right: 2rem;
@@ -117,6 +142,10 @@ a {
   }
   &__field {
     border: none;
+
+    @media only screen and (min-width: $bp-md) {
+      font-size: 1.4rem;
+    }
 
     &::placeholder {
       color: hsl(0, 1%, 77%);
@@ -131,8 +160,12 @@ a {
 // drop down menu
 
 .filter {
-  display: inline-block;
   cursor: pointer;
+  margin-bottom: 3rem;
+
+  @media only screen and (min-width: $bp-md) {
+    float: right;
+  }
 
   &__btn {
     display: flex;
@@ -157,7 +190,7 @@ a {
     padding: 1.5rem 2rem;
     background: var(--color-white);
     margin-top: 0.5rem;
-    height: 144px;
+    height: 14.4rem;
     width: 20rem;
     font-size: 1.2rem;
     display: flex;
@@ -175,15 +208,70 @@ a {
   }
 }
 
+.countries {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 264px);
+  gap: 4rem;
+  justify-content: space-evenly;
+
+  @media only screen and (min-width: $bp-lg) {
+    justify-content: space-between;
+  }
+}
+
+// card
+
+.card {
+  width: 264px;
+  height: 336px;
+  background: var(--color-white);
+  border-radius: 5px;
+  box-shadow: 1px 5px 20px var(--shadow);
+
+  &:last-child {
+    margin-bottom: 4rem;
+  }
+
+  &__img {
+    width: 264px;
+    height: 160px;
+    // object-fit: cover;
+    border-radius: 5px 5px 0 0;
+  }
+
+  &__body {
+    padding: 15px 25px;
+  }
+
+  &__title {
+    margin-bottom: 1.5rem;
+  }
+
+  &__text {
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    span {
+      font-weight: 600;
+
+      margin-right: 0.5rem;
+    }
+  }
+}
+
 //------------------  LAYOUT  --------------------//
 
 .header {
   background-color: var(--color-white);
   padding: 2.5rem 1.5rem;
+  margin-bottom: 2rem;
   box-shadow: 0 1px 15px rgb(228, 227, 227);
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media only screen and (min-width: $bp-md) {
+    margin-bottom: 4rem;
+  }
 }
 
 //------------------  THEME  --------------------//
