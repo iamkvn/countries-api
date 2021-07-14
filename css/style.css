@@ -51,7 +51,7 @@ span {
 .toggle-switch {
   position: relative;
   display: inline-block;
-  width: 5.2rem;
+  width: 5.6rem;
   height: 2.5rem; }
   .toggle-switch__checkbox {
     opacity: 0;
@@ -147,18 +147,21 @@ span {
   .filter__item:hover {
     background: var(--color-very-light-gray); }
 
-.countries {
+.countries-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, 264px);
-  gap: 4rem;
+  gap: 8rem 4.3rem;
   justify-content: space-evenly; }
   @media only screen and (min-width: 64em) {
-    .countries {
-      justify-content: space-between; } }
+    .countries-container {
+      justify-content: start; } }
+  @media only screen and (min-width: 90em) {
+    .countries-container {
+      gap: 8rem 7.4rem; } }
 
 .card {
   width: 264px;
-  height: 336px;
+  height: min-content;
   background: var(--color-white);
   border-radius: 5px;
   box-shadow: 1px 5px 20px var(--shadow); }
@@ -206,9 +209,7 @@ span {
     .section-detail {
       flex-direction: row;
       justify-content: space-between;
-      align-items: center; } }
-  @media only screen and (min-width: 64em) {
-    .section-detail {
+      align-items: center;
       margin: 8rem 0; } }
   .section-detail__img {
     width: 32rem;

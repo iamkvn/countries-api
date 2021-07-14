@@ -83,7 +83,7 @@ span {
 .toggle-switch {
   position: relative;
   display: inline-block;
-  width: 5.2rem; //54
+  width: 5.6rem; //54
   height: 2.5rem; //28
 
   &__checkbox {
@@ -214,14 +214,17 @@ span {
   }
 }
 
-.countries {
+.countries-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, 264px);
-  gap: 4rem;
+  gap: 8rem 4.3rem;
   justify-content: space-evenly;
 
   @media only screen and (min-width: $bp-lg) {
-    justify-content: space-between;
+    justify-content: start;
+  }
+  @media only screen and (min-width: $bp-xl) {
+    gap: 8rem 7.4rem;
   }
 }
 
@@ -229,7 +232,7 @@ span {
 
 .card {
   width: 264px;
-  height: 336px;
+  height: min-content; //336
   background: var(--color-white);
   border-radius: 5px;
   box-shadow: 1px 5px 20px var(--shadow);
@@ -295,9 +298,6 @@ span {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-  }
-
-  @media only screen and (min-width: $bp-lg) {
     margin: 8rem 0;
   }
 
